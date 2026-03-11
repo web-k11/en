@@ -535,8 +535,13 @@ const INCREMENT = 50;
 // 快取與渲染控制變量
 let isFetching = false;
 let renderTaskId = null;
-const CACHE_KEY_SONGS = 'app_songs_data';
-const CACHE_KEY_TITLE = 'app_title_data';
+const proxyEndpoint = 'https://script.google.com/macros/s/AKfycbyfwpaiE6qcEY5FrFW46giUqsvFcjVrnKsEdlLBkw_A7dO3ThkwOfUQ0aXXj5BCrwsBYA/exec';
+
+const gasIdMatch = proxyEndpoint.match(/\/s\/([^\/]+)/);
+const uniqueGasId = gasIdMatch ? gasIdMatch[1] : 'default_id';
+
+const CACHE_KEY_SONGS = `app_songs_data_${uniqueGasId}`;
+const CACHE_KEY_TITLE = `app_title_data_${uniqueGasId}`;
 
 // DOM 元素
 const searchInput = document.getElementById('search-input');
@@ -1413,12 +1418,4 @@ function getLanguageClass(language) {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
 
