@@ -535,7 +535,7 @@ const INCREMENT = 50;
 // 快取與渲染控制變量
 let isFetching = false;
 let renderTaskId = null;
-const proxyEndpoint = 'https://script.google.com/macros/s/AKfycbyfwpaiE6qcEY5FrFW46giUqsvFcjVrnKsEdlLBkw_A7dO3ThkwOfUQ0aXXj5BCrwsBYA/exec';
+const proxyEndpoint = 'https://script.google.com/macros/s/AKfycbwAs6cMaQSJR90tQz_1p-_-Y6-wlAD84xv82aVUhlmJVEv5yenjv6xGWOkA7mT-3ABmSg/exec';
 
 const gasIdMatch = proxyEndpoint.match(/\/s\/([^\/]+)/);
 const uniqueGasId = gasIdMatch ? gasIdMatch[1] : 'default_id';
@@ -731,7 +731,7 @@ async function fetchSheetData(isSilent = false) {
       enableDataProxy: true
     };
     
-    const proxyEndpoint = 'https://script.google.com/macros/s/AKfycbwAs6cMaQSJR90tQz_1p-_-Y6-wlAD84xv82aVUhlmJVEv5yenjv6xGWOkA7mT-3ABmSg/exec';
+    // const proxyEndpoint = 'https://script.google.com/macros/s/AKfycbwAs6cMaQSJR90tQz_1p-_-Y6-wlAD84xv82aVUhlmJVEv5yenjv6xGWOkA7mT-3ABmSg/exec';
     const targetUrl = `${proxyEndpoint}?t=${new Date().getTime()}`;
 
     const response = await fetch(targetUrl);
@@ -1418,4 +1418,5 @@ function getLanguageClass(language) {
 </script>
 </body>
 </html>
+
 
